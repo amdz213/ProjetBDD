@@ -4,9 +4,9 @@ const ETAT_INITIAL = {
   error: false,
 };
 
-export const Contexte = createContext(ETAT_INITIAL);
+export const Contexte = contexteCreation(ETAT_INITIAL);
 
-export const ContextProvider = ({ children }) => {
+export const ContextProvider = ({ enfant }) => {
   const [state, dispatch] = useReducer(Reducer, INITIAL_STATE);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export const ContextProvider = ({ children }) => {
         dispatch,
       }}
     >
-      {children}
+      {enfant}
     </Context.Provider>
   );
 };
