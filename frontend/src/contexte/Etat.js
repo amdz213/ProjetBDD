@@ -1,27 +1,27 @@
-export const Connexion = (identifiant) => ({
+export const Connexion = (User) => ({
   type: "CONNEXION EN COURS",
 });
 
-export const SuccesConnexion = (utilisateur) => ({
+export const SuccesConnexion = (user) => ({
   type: "CONNEXION REUSSI",
-  payload: utilisateur,
+  payload: user,
 });
 
 export const EchecConnexion = () => ({
-  type: "ECHEC DE LA CONNEION",
+  type: "ECHEC DE CONNEION",
 });
 
 export const Deconnexion = () => ({
   type: "DECONNEXION",
 });
 
-export const Modification = (identifiant) => ({
+export const Modification = (userCredentials) => ({
   type: "MISE A JOUR EN COURS",
 });
 
-export const SuccesModification = (utilisateur) => ({
+export const SuccesModification = (user) => ({
   type: "MISE A JOUR REUSSI",
-  payload: utilisateur,
+  payload: user,
 });
 
 export const EchecModification = () => ({

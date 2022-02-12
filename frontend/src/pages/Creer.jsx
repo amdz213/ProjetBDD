@@ -1,22 +1,22 @@
 export default function Creer() {
-    const [titre, setTitre] = useState("");
-    const [desc, setDesc] = useState("");
-    const [fichier, setFichier] = useState(null);
-    const { Utilisateur } = useContext(Context);
-  
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const [file, setFile] = useState(null);
+  const { user } = useContext(Context);
+
     const handleSubmit = async (e) => {
       e.preventDefault();
       const newPost = {
-        utilisateur: Utilisateur.utilisateur,
-        titre,
+        username: user.username,
+        title,
         desc,
       };
-      if (fichier) {
+      if (file) {
         const data =new FormData();
         const nomfichier = Date.now() + nomfichier;
-        data.append("nom", nomfichier);
-        data.append("fichier", fichier);
-        newPost.photo = nomfichier;
+        data.append("nom", filename);
+        data.append("fichier", file);
+        newPost.photo = filename;
         
       try {
         window.location.replace("/post/" + res.data._id);

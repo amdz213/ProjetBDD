@@ -1,20 +1,20 @@
 export default function inscription() {
-    const [utilisateur, setUtilisateur] = useState("");
-    const [email, setEmail] = useState("");
-    const [motdepasse, setMotdepasse] = useState("");
-    const [erreur, setErreur] = useState(false);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErreur(false);
         try {
-            utilisateur,
-            email,
-            motdepasse,
+          username,
+          email,
+          password,
 
           res.data && window.location.replace("/connexion");
         } catch (err) {
-          setErreur(true);
+          setError(true);
         }
       };
       return (
@@ -26,7 +26,7 @@ export default function inscription() {
               type="texte"
               className="registreEntrer"
               placeholder="Entrer votre utilisateur"
-              onChange={(e) => setUtilisateur(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
             />
             <label>Email</label>
             <input
@@ -40,7 +40,7 @@ export default function inscription() {
               type="MotDePasse"
               className="registreEntrer"
               placeholder="Entrer votre Mot de passe"
-              onChange={(e) => setMotdepasse(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <button className="Boutton" type="submit">
               S'inscrire

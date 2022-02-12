@@ -1,6 +1,6 @@
 export default function Connexion() {
-  const utilisateurRef = useRef();
-  const motdepasseRef = useRef();
+  const userRef = useRef();
+  const passwordRef = useRef();
   const { dispatch, isFetching } = useContext(Context);
 
    const handleSubmit = async (e) => 
@@ -20,14 +20,14 @@ export default function Connexion() {
           type="Texte"
           className="Entrer"
           placeholder="Entrer votre utilisateur"
-          ref={utilisateurRef}
+          ref={userRef}
         />
         <label>Mot de passe</label>
         <input
           type="Motdepasse"
           className="Entrer"
           placeholder="Entrer votre motdepasse"
-          ref={motdepasseRef}
+          ref={passwordRef}
         />
         <button 
         className="BoutonDeConnexion"

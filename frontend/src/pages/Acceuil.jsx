@@ -11,7 +11,7 @@ export default function Acceuil() {
     return (
       <>
         <Header />
-        <div className="acceuil">
+        <div className="Acceuil">
           <Posts posts={posts} />
           <Sidebar />
         </div>
