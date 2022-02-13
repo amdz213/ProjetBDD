@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const User = require("../models/Users");
 const Post = require("../models/Posts");
 
 //CREER UN COMMENTAIRE
@@ -31,7 +30,9 @@ router.put("/:id", async (req, res) => {
         res.status(500).json(err);
       }
     } else {
-      res.status(401).json("Vous pouvez modifier votre commentaire uniquement!");
+      res
+        .status(401)
+        .json("Vous pouvez modifier votre commentaire uniquement!");
     }
   } catch (err) {
     res.status(500).json(err);
@@ -50,7 +51,9 @@ router.delete("/:id", async (req, res) => {
         res.status(500).json(err);
       }
     } else {
-      res.status(401).json("Vous pouvez supprimer votre commentaire uniquement!");
+      res
+        .status(401)
+        .json("Vous pouvez supprimer votre commentaire uniquement!");
     }
   } catch (err) {
     res.status(500).json(err);

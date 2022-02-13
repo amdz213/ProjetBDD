@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const CategorySchema = new mongoose.Schema({
+const CommentsSchema = new mongoose.Schema({
   content: {
     type: String,
     required: true,
@@ -10,4 +10,4 @@ const CategorySchema = new mongoose.Schema({
     required: true,
   },
 });
-  module.exports = mongoose.model("comments", CategorySchema);
+module.exports = mongoose.model("comments", CommentsSchema);
