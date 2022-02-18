@@ -3,14 +3,13 @@ export default function Connexion() {
   const passwordRef = useRef();
   const { dispatch, isFetching } = useContext(Context);
 
-   const handleSubmit = async (e) => 
-    e.preventDefault();
-    dispatch({ type: "DEBUT_CONNEXION" });
-    try {
-      dispatch({ type: "CONNEXION_REUSSI", payload: res.data });
-    } catch (err) {
-      dispatch({ type: "CONNEXION_ECHOUER" });
-    }
+  const handleSubmit = async (e) => e.preventDefault();
+  dispatch({ type: "DEBUT_CONNEXION" });
+  try {
+    dispatch({ type: "CONNEXION_REUSSI", payload: res.data });
+  } catch (err) {
+    dispatch({ type: "CONNEXION_ECHOUER" });
+  }
   return (
     <div className="Connexion">
       <span className="TitreConnexion">Connexion</span>
@@ -29,15 +28,16 @@ export default function Connexion() {
           placeholder="Entrer votre motdepasse"
           ref={passwordRef}
         />
-        <button 
-        className="BoutonDeConnexion"
-        type="Envoyer" 
-        disabled={isFetching}>
+        <button
+          className="BoutonDeConnexion"
+          type="Envoyer"
+          disabled={isFetching}
+        >
           Connexion
         </button>
       </form>
       <button className="BoutonDinscription">
-        <Link className="link" to="/Inscription">
+        <Link className="lien" to="/Inscription">
           Inscription
         </Link>
       </button>
