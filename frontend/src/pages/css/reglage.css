@@ -1,0 +1,82 @@
+.reglages {
+  display: flex;
+}
+
+.wrapperReglages {
+  flex: 9;
+  padding: 20px;
+}
+
+.titreReglages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titreModificationReglages {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.titreSuppressionReglages {
+  color: #000000;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.Photo {
+  display: flex;
+  flex-direction: column;
+}
+
+.photoReglages {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.photoReglages > img {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.IconReglages {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #4b5320;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.Photo > label {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.Photo > input {
+  color: #000000;
+  margin: 10px 0;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid lightgray;
+}
+
+.modificationReglages {
+  width: 150px;
+  align-self: center;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: #4b5320;
+  padding: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
