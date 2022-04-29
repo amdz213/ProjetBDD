@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { Context } from "../contexte/Context";
-import "Navigation.css";
+import { Context } from "../contexte/Contexte";
+import "navigation.css";
 import { Link } from "react-router-dom";
 
 export default function Navigation() {

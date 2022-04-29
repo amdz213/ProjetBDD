@@ -1,6 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import { Context } from "../../context/Context";
-import "./posteunique.css";
+import { Context } from "../contexte/Contexte";
+import "posteunique.css";
+import axios from "axios";
+import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function PosteUnique() {
   const location = useLocation();
