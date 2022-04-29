@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
-import "Creer.css";
+import "../pages/css/creer.css";
 import axios from "axios";
-import { Context } from "../contexte/Context";
+import { Context } from "../contexte/Contexte";
 
 export default function Creer() {
   const [title, setTitle] = useState("");

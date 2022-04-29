@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../contexte/Contexte";
-import "posteunique.css";
+import "./css/posteunique.css";
 import axios from "axios";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";

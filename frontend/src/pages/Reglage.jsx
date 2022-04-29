@@ -1,7 +1,7 @@
-import "Reglage.css";
+import "../pages/css/reglage.css";
 import Laterale from "../components/Laterale";
 import { useContext, useState } from "react";
-import { Context } from "../../context/Context";
+import { Context } from "../contexte/Contexte";
 import axios from "axios";
 
 export default function Reglage() {

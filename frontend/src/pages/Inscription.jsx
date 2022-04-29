@@ -1,7 +1,6 @@
-import "Inscription.css";
-import Laterale from "../components/Laterale";
-import { useContext, useState } from "react";
-import { Context } from "../contexte/Context";
+import "../pages/css/inscription.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function Inscription() {

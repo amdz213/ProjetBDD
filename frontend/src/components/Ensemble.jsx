@@ -1,5 +1,5 @@
 import Post from "../post/Post";
-import "ensemble.css";
+import "./css/ensemble.css";
 
 export default function Posts({ posts }) {
   return (

@@ -12,27 +12,27 @@
   background-size: cover;
 }
 
-.TiytreConnx {
+.TitreConnexion {
   font-size: 50px;
 }
 
-.loginForm {
+.Formulaire {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
 
-.loginForm > label {
+.Formulaire > label {
   margin: 10px 0;
 }
 
-.loginInput {
+.Entrer {
   padding: 10px;
   background-color: white;
   border: none;
 }
 
-.loginButton {
+.BoutonDeConnexion{
   margin-top: 20px;
   cursor: pointer;
   background-color: lightcoral;
@@ -42,12 +42,12 @@
   padding: 10px;
 }
 
-.loginButton:disabled {
+.Envoyer {
   cursor: not-allowed;
   background-color: rgb(252, 173, 173);
 }
 
-.loginRegisterButton {
+.BoutonDinscription {
   position: absolute;
   top: 60px;
   right: 20px;
