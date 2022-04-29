@@ -14,7 +14,12 @@ const StatsSchema = new mongoose.Schema(
     admin: {
       type: String,
       required: true,
-    }
+    },
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+    },
   }
 );
 
