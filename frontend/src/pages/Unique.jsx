@@ -1,11 +1,11 @@
-import Sidebar from "../../components/sidebar/Sidebar";
+import Laterale from "../components/Laterale";
 import SinglePost from "../../components/singlePost/SinglePost";
 
 export default function Single() {
   return (
     <div className="article">
       <SinglePost />
-      <Sidebar />
+      <Laterale />
     </div>
   );
 }

@@ -1,4 +1,10 @@
-export default function inscription() {
+import "Inscription.css";
+import Laterale from "../components/Laterale";
+import { useContext, useState } from "react";
+import { Context } from "../contexte/Context";
+import axios from "axios";
+
+export default function Inscription() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

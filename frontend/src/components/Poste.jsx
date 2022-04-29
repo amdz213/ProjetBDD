@@ -1,3 +1,6 @@
+import "poste.css";
+import { Link } from "react-router-dom";
+
 export default function Post({ post }) {
   return (
     <div className="poste">

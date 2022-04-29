@@ -1,7 +1,9 @@
 import { useContext } from "react";
-import { Context } from "../../context/Context";
+import { Context } from "../contexte/Context";
+import "Navigation.css";
+import { Link } from "react-router-dom";
 
-export default function TopBar() {
+export default function Navigation() {
   const { user, dispatch } = useContext(Context);
 
   const handleLogout = () => {

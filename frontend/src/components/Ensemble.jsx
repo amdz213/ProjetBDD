@@ -1,4 +1,5 @@
 import Post from "../post/Post";
+import "Ensemble.css";
 
 export default function Posts({ posts }) {
   return (

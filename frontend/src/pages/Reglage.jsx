@@ -1,15 +1,17 @@
-import Sidebar from "../../components/sidebar/Sidebar";
+import "Reglage.css";
+import Laterale from "../components/Laterale";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
+import axios from "axios";
 
-export default function Reglages() {
+export default function Reglage() {
   const [fichier, setFichier] = useState(null);
   const [utilisateur, setUtilisateur] = useState("");
   const [email, setEmail] = useState("");
   const [motdepasse, setMotdepasse] = useState("");
-  const [succes, setSucces] = useState(false);
+  const [success, setSucces] = useState(false);
 
-  const { utilisateur, dispatch } = useContext(Context);
+  const { user, dispatch } = useContext(Context);
   const PF = "http://localhost:5000/images/";
 
   const handleSubmit = async (e) => {
@@ -29,7 +31,7 @@ export default function Reglages() {
       updatedUser.profilePic = nomfichier;
     }
     try {
-      const res = await axios.put("/users/" + utilisateur._id, updatedUser);
+      const res = await axios.put("/users/" + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: "MODIFICATION REUSSI", payload: res.data });
     } catch (err) {
@@ -48,7 +50,7 @@ export default function Reglages() {
           <div className="photoReglages">
             <img
               src={
-                file ? URL.createObjectURL(file) : PF + utilisateur.profilePic
+                file ? URL.createObjectURL(file) : PF + user.profilePic
               }
               alt=""
             />
@@ -65,13 +67,13 @@ export default function Reglages() {
           <label>Identifiant</label>
           <input
             type="texte"
-            placeholder={utilisateur.username}
+            placeholder={user.utilisateur}
             onChange={(e) => setUtilisateur(e.target.value)}
           />
           <label>Email</label>
           <input
             type="email"
-            placeholder={utilisateur.email}
+            placeholder={user.email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <label>Mot de passe</label>
@@ -91,7 +93,7 @@ export default function Reglages() {
           )}
         </form>
       </div>
-      <Sidebar />
+      <Laterale />
     </div>
   );
 }
