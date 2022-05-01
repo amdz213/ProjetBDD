@@ -5,8 +5,7 @@ const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
-const statRoute = require("./routes/stats");
-const commentRoute = require("./routes/comments");
+const categoryRoute = require("./routes/categories");
 const multer = require("multer");
 const path = require("path");
 
@@ -21,7 +20,7 @@ mongoose
     useCreateIndex: true,
     useFindAndModify:true
   })
-  .then(console.log("Connexion a MongoDB"))
+  .then(console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
 const storage = multer.diskStorage({
@@ -34,16 +33,15 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
-app.post("/api/upload", upload.single("fichier"), (req, res) => {
-  res.status(200).json("ficher modifier");
+app.post("/api/upload", upload.single("file"), (req, res) => {
+  res.status(200).json("File has been uploaded");
 });
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
-app.use("/api/stats", statRoute);
 app.use("/api/posts", postRoute);
-app.use("/api/comments", commentRoute);
+app.use("/api/categories", categoryRoute);
 
 app.listen("5000", () => {
-  console.log("Backend en cours de process.");
+  console.log("Backend is running.");
 });
