@@ -2,71 +2,77 @@ import { useContext, useState } from "react";
 import "./stat.css";
 import axios from "axios";
 import { Context } from "../../context/Context";
+import Sidebar from "../../components/sidebar/Sidebar";
 
 export default function Stat() {
-  const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
-  const [file, setFile] = useState(null);
-  const { user } = useContext(Context);
+  const [username, setUsername] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  const { user, dispatch } = useContext(Context);
+  const PF = "http://localhost:5000/images/"
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newPost = {
-      username: user.username,
-      title,
-      desc,
+    dispatch({ type: "UPDATE_START" });
+    const updatedUser = {
+      userId: user._id,
+      username,
     };
-    if (file) {
-      const data =new FormData();
-      const filename = Date.now() + file.name;
-      data.append("name", filename);
-      data.append("file", file);
-      newPost.photo = filename;
-      try {
-        await axios.post("/upload", data);
-      } catch (err) {}
-    }
+    
     try {
-      const res = await axios.post("/posts", newPost);
-      window.location.replace("/post/" + res.data._id);
-    } catch (err) {}
+      const res = await axios.get("/users/" + user._id, updatedUser);
+      setSuccess(true);
+      const resultat = await axios.get("/posts/" + user._id, updatedUser);
+      dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
+    } catch (err) {
+      dispatch({ type: "UPDATE_FAILURE" });
+    }
   };
   return (
     <div className="stat">
-      {file && (
-        <img className="statImg" src={URL.createObjectURL(file)} alt="" />
-      )}
-      <form className="statForm" onSubmit={handleSubmit}>
-        <div className="statFormGroup">
-          <label htmlFor="fileInput">
-            <i className="statIcon fas fa-plus"></i>
-          </label>
-          <input
-            type="file"
-            id="fileInput"
-            style={{ display: "none" }}
-            onChange={(e) => setFile(e.target.files[0])}
-          />
+      <div className="statWrapper">
+        <div className="statTitle">
+          <span className="statUpdateTitle">Statistique</span>
+        </div>
+
+        <div className="statPP">
+        <label>nombre de mes commentaires</label>
           <input
             type="text"
-            placeholder="Titre"
-            className="statInput"
-            autoFocus={true}
-            onChange={e=>setTitle(e.target.value)}
+            placeholder="40"
+           
           />
-        </div>
-        <div className="statFormGroup">
-          <textarea
-            placeholder="Exprime -toi..."
+          </div>
+
+
+          <div className="statPP">
+          <label>nombres de postes</label>
+          <input
             type="text"
-            className="statInput statText"
-            onChange={e=>setDesc(e.target.value)}
-          ></textarea>
-        </div>
-        <button className="statSubmit" type="submit">
-          Publier
-        </button>
-      </form>
+            placeholder= "10"
+           
+          />
+          </div>
+
+          <div className="statPP">
+          <label>nombres d'auteurs</label>
+          <input
+            type="text"
+            placeholder="15"
+           
+          />
+          </div>
+
+          <div className="statPP">
+          <label>nombres de visites</label>
+          <input
+            type="text"
+            placeholder="20"
+          />
+          </div>
+         
+      </div>
+      <Sidebar />
     </div>
   );
 }

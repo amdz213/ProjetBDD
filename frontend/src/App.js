@@ -1,4 +1,4 @@
-import Home from "./pages/home/Home";
+import Acceuil  from "./pages/acceuil/Acceuil";
 import TopBar from "./components/topbar/TopBar";
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
@@ -17,10 +17,10 @@ function App() {
       <TopBar />
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Acceuil />
         </Route>
-        <Route path="/inscription">{user ? <Home /> : <Inscription />}</Route>
-        <Route path="/connexion">{user ? <Home /> : <Connexion />}</Route>
+        <Route path="/inscription">{user ? <Acceuil /> : <Inscription />}</Route>
+        <Route path="/connexion">{user ? <Acceuil /> : <Connexion />}</Route>
         <Route path="/write">{user ? <Write /> : <Inscription />}</Route>
         <Route path="/stat">{user ? <Stat /> : <Inscription />}</Route>
         <Route path="/paramettre">{user ? <Paramettre /> : <Inscription />}</Route>

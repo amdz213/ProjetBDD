@@ -53,11 +53,11 @@ export default function Inscription() {
         </button>
       </form>
       <button className="registerLoginButton">
-        <Link className="link" to="/login">
+        <Link className="link" to="/connexion">
           Connexion
         </Link>
       </button>
-      {error && <span style={{color:"red", marginTop:"10px"}}>Something went wrong!</span>}
+      {error && <span style={{color:"red", marginTop:"10px"}}>echec d'inscription</span>}
     </div>
   );
 }
