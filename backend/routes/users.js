@@ -27,6 +27,22 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+router.put(function (req, res) {
+  User.findById(req.params.status, function (err, user) {
+    if (err) {
+      res.send(err);
+    }
+    // Modifie le statut (transition admin à user et vice-versa)
+    user.status = req.body.status;
+    user.save(function (err) {
+      if (err) {
+        res.send(err);
+      }
+      res.json({ message: "Votre statut a changé !" }); //pb concanténation 'Vous êtes maintenant' + ' ' + {user.statut}}
+    });
+  });
+});
+
 //DELETE
 router.delete("/:id", async (req, res) => {
   if (req.body.userId === req.params.id) {
