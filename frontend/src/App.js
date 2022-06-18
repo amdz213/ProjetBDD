@@ -27,6 +27,8 @@ function App() {
         <Route path="/post/:postId">
           <Single />
         </Route>
+        <Route path="/article/:articleId"></Route>
+      <Route path="/Dashboard"></Route>
       </Switch>
     </Router>
   );
